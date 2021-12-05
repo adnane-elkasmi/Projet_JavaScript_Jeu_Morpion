@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Exercice Presentiel - Le morpion</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Le morpion (Adnane EL KASMI).">
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript" src="javascript/script.js"></script>
+
+</head>
+
+<body>
+
+<div id="titre">Le Morpion <b>[ Adnane EL KASMI ING1 GM Groupe 2 ]</b></div>	
+<div id="Recommencer">
+    <input type="button" class="bouton" onclick='window.location.reload(false)' value="Recommencer"/>
+</div>
+
+<script language="javascript">
+
+joueur1=1;
+joueur2=0;
+j1_win=0;
+j2_win=0;
+nul=0;
+coup=0;
+var jeu=new Array(9);
+for(a=0;a<9;a++)
+{
+	jeu[a]=0;
+}
+
+// creation d'une table grace à des barres verticales et horizontales.
+
+document.write("<div id='barreverticale1' ></div>");
+document.write("<div id='barreverticale2' ></div>");
+document.write("<div id='barreverticale3' ></div>");
+document.write("<div id='barreverticale4' ></div>");
+
+document.write("<div id='barrehorizontale1' ></div>");
+document.write("<div id='barrehorizontale2' ></div>");
+document.write("<div id='barrehorizontale3' ></div>");
+document.write("<div id='barrehorizontale4' ></div>");
+
+
+
+// remplir cette table par l'image (fond.png) apres avoir telecharger le fichier cartes.zip depuis arel.
+
+document.write("<div id='case0b' onclick='clic(\"case0\")'><img src='images/fond.png' height='104' width='108'></div>");
+document.write("<div id='case1b' onclick='clic(\"case1\")'><img src='images/fond.png' height='104' width='108'></div>");
+document.write("<div id='case2b' onclick='clic(\"case2\")'><img src='images/fond.png' height='104' width='108'></div>");
+document.write("<div id='case3b' onclick='clic(\"case3\")'><img src='images/fond.png' height='104' width='108'></div>");
+document.write("<div id='case4b' onclick='clic(\"case4\")'><img src='images/fond.png' height='104' width='108'></div>");
+document.write("<div id='case5b' onclick='clic(\"case5\")'><img src='images/fond.png' height='104' width='108'></div>");
+document.write("<div id='case6b' onclick='clic(\"case6\")'><img src='images/fond.png' height='104' width='108'></div>");
+document.write("<div id='case7b' onclick='clic(\"case7\")'><img src='images/fond.png' height='104' width='108'></div>");
+document.write("<div id='case8b' onclick='clic(\"case8\")'><img src='images/fond.png' height='104' width='108'></div>");
+
+// remplir cette table par l'image (fond1.png) pour cacher l'image (fond.png) apres avoir effectuer un clique. 
+
+document.write("<div id='case0c'><img src='images/fond1.png' height='104' width='108'></div>");
+document.write("<div id='case1c'><img src='images/fond1.png' height='104' width='108'></div>");
+document.write("<div id='case2c'><img src='images/fond1.png' height='104' width='108'></div>");
+document.write("<div id='case3c'><img src='images/fond1.png' height='104' width='108'></div>");
+document.write("<div id='case4c'><img src='images/fond1.png' height='104' width='108'></div>");
+document.write("<div id='case5c'><img src='images/fond1.png' height='104' width='108'></div>");
+document.write("<div id='case6c'><img src='images/fond1.png' height='104' width='108'></div>");
+document.write("<div id='case7c'><img src='images/fond1.png' height='104' width='108'></div>");
+document.write("<div id='case8c'><img src='images/fond1.png' height='104' width='108'></div>");
+
+// remplir cette table par l'image (fond2.png) pour cacher l'image (fond.png) apres avoir effectuer un clique.
+
+document.write("<div id='case0r'><img src='images/fond2.png' height='104' width='108'></div>");
+document.write("<div id='case1r'><img src='images/fond2.png' height='104' width='108'></div>");
+document.write("<div id='case2r'><img src='images/fond2.png' height='104' width='108'></div>");
+document.write("<div id='case3r'><img src='images/fond2.png' height='104' width='108'></div>");
+document.write("<div id='case4r'><img src='images/fond2.png' height='104' width='108'></div>");
+document.write("<div id='case5r'><img src='images/fond2.png' height='104' width='108'></div>");
+document.write("<div id='case6r'><img src='images/fond2.png' height='104' width='108'></div>");
+document.write("<div id='case7r'><img src='images/fond2.png' height='104' width='108'></div>");
+document.write("<div id='case8r'><img src='images/fond2.png' height='104' width='108'></div>");
+
+document.write("<div id='player1'><form name='form1'><p align='left'><input type='button' class='boutonjoueur1' value='Joueur 1 (rouge)' name='j1' onclick='verif(\"form1\")'><br><br><input type='text' name='resultj1' size='3' value='0'></p></form></div>");
+
+document.write("<div id='player2'><form name='form2'><p align='left'><input type='button' class='boutonjoueur2' value='Joueur 2 (vert)' name='j2' onclick='verif(\"form2\")'><br><br><input type='text' name='resultj2' size='3' value='0'></p></form></div>");
+
+
+</script>
+
+</body>
+
+</html>
